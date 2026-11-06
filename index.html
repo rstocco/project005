@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Retorno à Web</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #f8fafc;
+      padding: 1.5rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 1rem;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background: #0284c7;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #7dd3fc;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+    }
+
+    .output {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #38bdf8;
+      min-height: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="card">
+    <span class="badge">Online via GitHub Pages</span>
+    <h1>Olá, Mundo! 🚀</h1>
+    <p>Adeus FTP e pastas zipadas. Este teste confirma que o HTML, CSS e JavaScript estão rodando 100% no navegador.</p>
+
+    <button id="btnTeste">Testar JavaScript</button>
+    <div id="resultado" class="output"></div>
+  </main>
+
+  <script>
+    let cliques = 0;
+    const btn = document.getElementById('btnTeste');
+    const out = document.getElementById('resultado');
+
+    btn.addEventListener('click', () => {
+      cliques++;
+      const agora = new Date().toLocaleTimeString('pt-BR');
+      out.textContent = `JS funcionando! Cliques: ${cliques} (Último às ${agora})`;
+    });
+  </script>
+
+</body>
+</html>
